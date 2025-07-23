@@ -80,15 +80,21 @@ public class UserController {
         if (userUpdates.getUsername() != null) {
             existing.setUsername(userUpdates.getUsername());
         }
+
         if (userUpdates.getIdFirebase() != null) {
             existing.setIdFirebase(userUpdates.getIdFirebase());
         }
+
         if (userUpdates.getThreads() != null && !userUpdates.getThreads().isEmpty()) {
-            existing.setThreads(userUpdates.getThreads());
+            // Evita duplicados
+            for (String threadId : userUpdates.getThreads()) {
+                if (!existing.getThreads().contains(threadId)) {
+                    existing.getThreads().add(threadId);
+                }
+            }
         }
 
         User updated = this.uService.save(existing);
         return ResponseEntity.ok(updated);
     }
-
 }
