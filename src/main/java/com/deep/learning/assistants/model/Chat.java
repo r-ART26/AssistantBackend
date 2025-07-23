@@ -1,10 +1,8 @@
 package com.deep.learning.assistants.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "chats")
@@ -16,9 +14,15 @@ public class Chat {
 
     private String threadId;
 
-    private String question;
+    @ElementCollection(fetch = FetchType.EAGER)
+    @CollectionTable(name = "chat_questions", joinColumns = @JoinColumn(name = "chat_id"))
+    private List<String> questions = new ArrayList<>();
 
-    private String answer;
+    @ElementCollection(fetch = FetchType.EAGER)
+    @CollectionTable(name = "chat_answers", joinColumns = @JoinColumn(name = "chat_id"))
+    private List<String> answers = new ArrayList<>();
+
+    // Getters y setters
 
     public Long getId() {
         return id;
@@ -36,20 +40,19 @@ public class Chat {
         this.threadId = threadId;
     }
 
-    public String getQuestion() {
-        return question;
+    public List<String> getQuestions() {
+        return questions;
     }
 
-    public void setQuestion(String question) {
-        this.question = question;
+    public void setQuestions(List<String> questions) {
+        this.questions = questions;
     }
 
-    public String getAnswer() {
-        return answer;
+    public List<String> getAnswers() {
+        return answers;
     }
 
-    public void setAnswer(String answer) {
-        this.answer = answer;
+    public void setAnswers(List<String> answers) {
+        this.answers = answers;
     }
-
 }
