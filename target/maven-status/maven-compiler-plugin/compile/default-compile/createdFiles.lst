@@ -1,0 +1,9 @@
+com/deep/learning/assistants/AssistantsApplication.class
+com/deep/learning/assistants/model/Chat.class
+com/deep/learning/assistants/model/User.class
+com/deep/learning/assistants/controller/UserController.class
+com/deep/learning/assistants/service/UserService.class
+com/deep/learning/assistants/controller/ChatController.class
+com/deep/learning/assistants/repository/UserRepository.class
+com/deep/learning/assistants/repository/ChatRepository.class
+com/deep/learning/assistants/service/ChatService.class

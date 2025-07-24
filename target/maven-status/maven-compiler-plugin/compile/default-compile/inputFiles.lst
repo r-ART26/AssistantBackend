@@ -1,0 +1,9 @@
+/home/romero/Escritorio/assistants/src/main/java/com/deep/learning/assistants/AssistantsApplication.java
+/home/romero/Escritorio/assistants/src/main/java/com/deep/learning/assistants/controller/ChatController.java
+/home/romero/Escritorio/assistants/src/main/java/com/deep/learning/assistants/controller/UserController.java
+/home/romero/Escritorio/assistants/src/main/java/com/deep/learning/assistants/model/Chat.java
+/home/romero/Escritorio/assistants/src/main/java/com/deep/learning/assistants/model/User.java
+/home/romero/Escritorio/assistants/src/main/java/com/deep/learning/assistants/repository/ChatRepository.java
+/home/romero/Escritorio/assistants/src/main/java/com/deep/learning/assistants/repository/UserRepository.java
+/home/romero/Escritorio/assistants/src/main/java/com/deep/learning/assistants/service/ChatService.java
+/home/romero/Escritorio/assistants/src/main/java/com/deep/learning/assistants/service/UserService.java
