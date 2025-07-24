@@ -41,6 +41,13 @@ public class UserController {
         return user.map(ResponseEntity::ok)
                    .orElse(ResponseEntity.notFound().build());
     }
+    
+    @GetMapping("/firebase/{idFirebase}")
+    public ResponseEntity<User> getUserByFirebaseId(@PathVariable String idFirebase) {
+        Optional<User> user = this.uService.getByIdFirebase(idFirebase);
+        return user.map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+    }
 
     @PostMapping
     public ResponseEntity<User> createUser(@RequestBody User user) {

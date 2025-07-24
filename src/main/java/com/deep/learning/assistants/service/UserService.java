@@ -36,4 +36,8 @@ public class UserService {
         user.getThreads().add(threadId);
         return this.uRepository.save(user);
     }
+
+    public Optional<User> getByIdFirebase(String idFirebase) {
+        return this.uRepository.findByIdFirebase(idFirebase);
+    }
 }
